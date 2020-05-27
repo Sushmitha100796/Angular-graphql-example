@@ -1,0 +1,21 @@
+<form id="add-book" >
+    <div class="field">
+        <label>Book Name: </label>
+        <input type="text" (input)="onNameChange($event.target.value)"/>
+    </div>
+
+    <div class="field">
+        <label>Genre: </label>
+        <input type="text" (input)="onGenreChange($event.target.value)"/>
+    </div>
+
+    <div class="field">
+        <label>Author: </label>
+        <select (change) = "authorSelected($event.target.value)" >
+            <option>Select Author</option>
+            <option *ngFor="let auth of authors">{{auth.name}}</option>
+        </select>
+    </div>
+
+    <button type="button" (click)="onSubmit()">+</button>
+</form>

@@ -1,0 +1,14 @@
+<div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+  <div *ngIf="books">
+    <h1>Ninja's Reading List</h1>
+    <div *ngFor="let book of books">
+      <ul>
+      <li (click)="getBookDetails(book.id)">{{book.name}}</li>
+    </ul>
+    </div>
+  </div>

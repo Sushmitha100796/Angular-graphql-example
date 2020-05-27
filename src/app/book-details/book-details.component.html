@@ -1,0 +1,14 @@
+
+<div *ngIf="noBook">No Books selected.....</div>
+<div *ngIf="book">
+    <h1>Book Details</h1>
+    <p>Name: {{book.name}} </p>
+    <p>Genre: {{book.genre}}</p>
+    <h4>Author Details:</h4>
+        <p>Name: {{book.author.name}}</p>
+        <p>Age: {{book.author.age}}</p>
+        <h4>Books written by this author:</h4>
+        <ul *ngFor="let bk of book.author.books">
+            <li>{{bk.name}}</li>
+        </ul>
+</div>
